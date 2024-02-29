@@ -1,6 +1,56 @@
 @import url("./reset.css");
 @import url("./fonts.css");
 
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --white: #fff;
+  --beige: #e9ded4;
+  --light-gray: #d0d0d0;
+  --gray: #d6d6d6;
+  --gark-gray: #313131;
+  --black: #1f1f1f;
+  --orange: #f54932;
+  --blue: #3057a2;
+  --yellow: #fbce51;
+  --logo-brown: #595653;
+}
+
 body {
   font-family: "Merriweather";
+}
+
+.header {
+  padding: 26px 72px 2px;
+}
+
+.header__logo {
+  max-width: 255px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: 36px;
+}
+
+.header__logo-imgs {
+  padding: 2px 0;
+  display: flex;
+  gap: 0;
+}
+
+.header__logo-title {
+  font-family: "Golos Text";
+  font-weight: 700;
+  font-size: 16.65px;
+  line-height: 17.98px;
+  letter-spacing: 0.2px;
+  color: var(--logo-brown);
+  text-transform: uppercase;
 }
