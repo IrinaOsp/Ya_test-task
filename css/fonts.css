@@ -1,0 +1,44 @@
+/* golos-text-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/golos-text-v4-cyrillic_latin-regular.woff2")
+    format("woff2");
+}
+/* golos-text-500 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/golos-text-v4-cyrillic_latin-500.woff2") format("woff2");
+}
+/* golos-text-600 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/golos-text-v4-cyrillic_latin-600.woff2") format("woff2");
+}
+
+/* merriweather-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/merriweather-v30-cyrillic_latin-regular.woff2")
+    format("woff2");
+}
+
+/* merriweather-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/merriweather-v30-cyrillic_latin-700.woff2") format("woff2");
+}
