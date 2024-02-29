@@ -25,10 +25,23 @@ html {
 
 body {
   font-family: "Merriweather";
+  width: 100vw;
+  color: var(--black);
 }
 
 .header {
-  padding: 26px 72px 2px;
+  padding: 26px 0 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 72px;
 }
 
 .header__logo {
@@ -52,5 +65,91 @@ body {
   line-height: 17.98px;
   letter-spacing: 0.2px;
   color: var(--logo-brown);
+  text-transform: uppercase;
+}
+
+.section-first {
+  position: relative;
+  background-color: var(--beige);
+  background-image: url("../assets/imgs/background.png");
+  background-blend-mode: color-burn;
+  background-size: cover;
+  z-index: 0;
+  * {
+    text-align: center;
+  }
+}
+
+.bg-container {
+  position: relative;
+  background: url("../assets/imgs/main-img.png") no-repeat bottom;
+  background-position: bottom 12px left -119px;
+  z-index: 1;
+}
+
+.section-first__content {
+  max-width: 542px;
+  padding-top: 124px;
+  padding-bottom: 192px;
+}
+
+.section__title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  font-size: 60px;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  span:first-child {
+    text-align: left;
+  }
+  span:last-child {
+    text-align: right;
+  }
+}
+
+.section__text {
+  margin-bottom: 38px;
+  font: 400 18px / 24px "Golos Text";
+}
+
+.btn-primary {
+  padding: 13px 49px;
+  width: fit-content;
+  max-width: 48%;
+  text-align: center;
+  font: 500 16px "Golos Text";
+  line-height: 130%;
+  border: var(--black) 2px solid;
+  border-radius: 66px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:first-of-type {
+    margin-right: 16px;
+  }
+  &:active,
+  &:focus {
+    background-color: var(--black);
+    color: var(--white);
+  }
+  &:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
+  }
+}
+
+.ticker {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 60px;
+  padding-top: 18px;
+  background-color: var(--orange);
+  z-index: 2;
+  color: var(--white);
+  font-size: 22px;
   text-transform: uppercase;
 }
