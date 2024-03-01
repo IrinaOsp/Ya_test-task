@@ -435,4 +435,19 @@ button {
       background-color: var(--white);
     }
   }
+  .ticker {
+    position: static;
+  }
+}
+
+.footer {
+  background-color: var(--beige);
+  .container {
+    padding: 40px 72px 72px;
+  }
+  .footer__text {
+    font: 400 16px / 19px "Golos Text";
+    color: var(--dark-gray);
+    text-align: left;
+  }
 }
