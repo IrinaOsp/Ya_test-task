@@ -3,11 +3,13 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  scroll-behavior: inherit;
 }
 
 :root {
@@ -32,6 +34,15 @@ body {
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile {
+  display: none;
 }
 
 /* HEADER */
@@ -92,14 +103,16 @@ button {
 .bg-container {
   position: relative;
   background: url("../assets/imgs/main-img.png") no-repeat bottom;
-  background-position: bottom 12px left -119px;
+  background-position: bottom;
   z-index: 1;
 }
 
 .section-first__content {
   max-width: 542px;
   padding-top: 124px;
-  padding-bottom: 192px;
+  padding-bottom: 182px;
+  display: flex;
+  flex-direction: column;
 }
 
 .section__title {
@@ -110,10 +123,10 @@ button {
   line-height: 110%;
   text-transform: uppercase;
 
-  span:first-child {
+  .section__title-first {
     text-align: left;
   }
-  span:last-child {
+  .section__title-last {
     text-align: right;
   }
 }
@@ -123,10 +136,15 @@ button {
   font: 400 18px / 24px "Golos Text";
 }
 
+.section_buttons {
+  display: flex;
+  gap: 16px;
+}
+
 .btn-primary {
   padding: 13px 49px;
   width: fit-content;
-  max-width: 48%;
+  min-width: 263px;
   text-align: center;
   font: 500 16px "Golos Text";
   line-height: 130%;
@@ -134,9 +152,6 @@ button {
   border-radius: 66px;
   background-color: var(--white);
   transition: all 0.3s ease;
-  &:first-of-type {
-    margin-right: 16px;
-  }
   &:active,
   &:focus {
     background-color: var(--black);
@@ -151,7 +166,7 @@ button {
 
 .ticker {
   position: absolute;
-  bottom: 0;
+  bottom: -9px;
   width: 100vw;
   height: 60px;
   padding-top: 18px;
@@ -165,69 +180,83 @@ button {
 /* SUPPORT SECTION */
 
 .section-support {
-  padding: 80px 0 31px;
+  padding: 88px 0 200px;
   .section__title {
     max-width: 764px;
     font-size: 36px;
     line-height: 135%;
-    margin-bottom: 0;
     & span:last-child {
       text-align: left;
-      font-weight: 600;
     }
     .section__title-red {
       color: var(--red);
+      font-weight: 700;
     }
+  }
+  .first-title {
+    margin: 28px 394px 0 0;
   }
 }
 
 .section-support__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 30px;
   max-width: 1222px;
-  .section__title:first-of-type {
-    grid-area: 1 / 1 / 2 / 3;
+  width: 100%;
+  .content-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 42px;
+    width: 100%;
+  }
+  .content-wrapper:last-of-type {
+    flex-wrap: nowrap;
+    align-items: start;
   }
   .section__title:last-of-type {
     display: block;
-    max-width: 689px;
-    margin-top: 16px;
-    margin-left: 95px;
-    grid-area: 2 / 2 / 3 / 4;
-    place-self: center;
-    align-self: center;
   }
 }
 
 .img-container1 {
   max-width: 100%;
   height: auto;
-  grid-area: 1 / 3 / 2 / 4;
-  place-self: end;
+  position: absolute;
+  top: 0;
+  right: 0;
   .section__title-img1 {
     object-fit: contain;
   }
 }
 
 .img-container2 {
-  max-width: 474px;
-  grid-area: 2 / 1 / 6 / 2;
-  place-self: start;
+  width: 474px;
   position: relative;
+  flex-basis: content;
   .section__title-img2 {
-    position: absolute;
+    position: relative;
     top: 33px;
     left: -29px;
   }
 }
 
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  .section__title {
+    margin-top: 63px;
+    padding-right: 17px;
+  }
+}
+
 .prices-container {
-  grid-area: 3 / 2 / 6 / 4;
-  place-self: end;
-  align-self: start;
-  margin-right: 54px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -236,7 +265,6 @@ button {
 
 .prices-table {
   display: block;
-  max-width: 704px;
   width: 100%;
   font: 500 20px "Golos Text";
   text-align: left;
@@ -246,13 +274,15 @@ button {
   }
   td {
     padding: 15px 0;
+    text-wrap: balance;
   }
   td:nth-of-type(odd) {
+    min-width: 306px;
     font-weight: 400;
     color: var(--dark-gray);
-    width: 306px;
   }
   td:nth-of-type(even) {
+    width: 100%;
     font-weight: 600;
     padding-left: 16px;
     border-left: 2px solid var(--light-gray);
@@ -268,6 +298,8 @@ button {
 }
 
 .text-note {
+  width: 100%;
+  text-align: left;
   font: 400 20px "Golos Text";
   line-height: 120%;
   color: var(--blue);
@@ -303,12 +335,11 @@ button {
 }
 
 .phases__container {
-  max-height: 400px;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
   counter-reset: numbers;
   font: 500 20px / 24px "Golos Text";
   .phases__item {
@@ -339,18 +370,64 @@ button {
   .item7 {
     position: relative;
     margin-left: 5px;
-    padding-right: 290px;
+    padding-right: 310px;
     grid-area: 3 / 2 / 4 / 4;
-    &::after {
+    .phases__plane {
       position: absolute;
       top: -96px;
       right: -126px;
       display: inline-block;
-      content: "";
       background: url("../assets/imgs/plane.png") no-repeat;
       background-size: contain;
       width: 463px;
       height: 233px;
+    }
+  }
+}
+
+.phases__carousel-container {
+  display: none;
+  gap: 16px;
+  margin: 28px auto 0;
+  width: fit-content;
+  .carousel__button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    &:hover {
+      circle {
+        fill: var(--yellow);
+      }
+    }
+    &:disabled {
+      circle {
+        fill: var(--gray);
+      }
+    }
+  }
+  .carousel__button:first-of-type {
+    transform: rotate(180deg);
+  }
+  .slide__buttons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    .slide__button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background-color: #d9d9d9;
+      &:hover {
+        background-color: var(--yellow);
+      }
+      &:active,
+      &:focus {
+        background-color: var(--dark-gray);
+      }
     }
   }
 }
@@ -363,6 +440,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    gap: 20px;
     margin-bottom: 40px;
   }
   .section__title {
@@ -395,6 +473,7 @@ button {
     }
   }
   .carousel__counter {
+    min-width: 35px;
     font: 400 16px / 19px "Golos Text";
     color: var(--dark-gray);
   }
@@ -409,9 +488,13 @@ button {
     align-items: center;
     text-align: center;
     gap: 95px;
-    width: fit-content;
+    width: max-content;
     margin: 0 auto 140px;
-
+    .participants__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .item__img-container {
       width: 320px;
       height: 320px;
@@ -449,5 +532,301 @@ button {
     font: 400 16px / 19px "Golos Text";
     color: var(--dark-gray);
     text-align: left;
+  }
+}
+
+@media screen and (max-width: 1363px) {
+  .img-container2 {
+    width: 335px;
+    height: auto;
+  }
+  .section__title-img2 {
+    width: 335px;
+    height: 402px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .section-support {
+    padding-bottom: 112px;
+  }
+  .section-support__content {
+    .first-title.section__title:last-of-type {
+      margin-right: 0;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .content-wrapper:last-of-type {
+      flex-wrap: wrap;
+    }
+  }
+  .img-container1 {
+    position: static;
+  }
+  .img-container1,
+  .img-container2 {
+    align-self: center;
+    margin: 0 auto;
+  }
+  .phases__container {
+    grid-template-columns: repeat(2, 1fr);
+    .item3 {
+      grid-area: unset;
+    }
+    .item7 {
+      grid-area: 4 / 1 / 5 / 3;
+      padding-right: 323px;
+      margin-left: 0;
+      .phases__plane {
+        top: -40px;
+        right: -25px;
+        width: 366px;
+        height: 200px;
+        rotate: -3deg;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 683px) {
+  .container {
+    padding: 0 20px;
+  }
+  .section-first .section__title {
+    font-size: 50px;
+  }
+  .phases__container {
+    column-gap: 10px;
+    row-gap: 10px;
+    .item7 {
+      position: static;
+      padding: 20px;
+      .phases__plane {
+        top: -152px;
+        right: 87px;
+      }
+    }
+  }
+  .section-phases .section__title {
+    margin-bottom: 150px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .section_buttons {
+    flex-direction: column;
+    .btn-primary {
+      width: 100%;
+    }
+  }
+  .section-support .section__title {
+    font-size: 28px;
+    line-height: 135%;
+  }
+  .table-container {
+    gap: 44px;
+    .section__title {
+      padding-right: 0;
+      margin: 0;
+    }
+  }
+  .prices-container {
+    gap: 21px;
+  }
+  .prices-table {
+    tbody {
+      display: flex;
+      flex-direction: column;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
+    td:nth-of-type(even) {
+      display: block;
+      padding: 12px 0 15px;
+    }
+    td:nth-of-type(odd) {
+      display: block;
+      padding: 16px 0 0;
+    }
+    tr:nth-of-type(4) {
+      order: 1;
+      span {
+        margin-bottom: 11px;
+      }
+    }
+    tr:nth-of-type(5) {
+      order: 3;
+    }
+    tr:nth-of-type(3) {
+      order: 2;
+    }
+    .desktop,
+    td.desktop {
+      display: none;
+    }
+    .mobile {
+      display: inline-block;
+      font-weight: 600;
+    }
+  }
+  .section-phases .section__title {
+    margin-bottom: 0;
+  }
+  .phases__container {
+    padding-top: 148px;
+    overflow-x: scroll;
+    grid-template-columns: repeat(5, calc(100vw - 20px * 2));
+    grid-template-rows: repeat(2, 150px);
+    row-gap: 0;
+    column-gap: 20px;
+    grid-auto-flow: column;
+    line-height: 22px;
+    .item3,
+    .item6 {
+      grid-row: 1 / 3;
+    }
+    .item7 {
+      grid-area: unset;
+      grid-row: 1 / 3;
+      .phases__plane {
+        top: 16px;
+        right: -40px;
+      }
+    }
+    .phases__item {
+      padding-top: 62px;
+      font-size: 18px;
+      align-items: start;
+    }
+    .item2 {
+      padding-top: 29px;
+    }
+    .item5 {
+      padding-top: 0;
+    }
+  }
+  .phases__carousel-container {
+    display: flex;
+  }
+  .section-phases,
+  .section-participants {
+    .section__title {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+  .section-participants {
+    margin-top: 122px;
+    .carousel__button {
+      scale: 0.81;
+    }
+    .participants__container {
+      margin-bottom: 100px;
+      .item__img-container,
+      .item__img {
+        width: 244px;
+        height: 244px;
+      }
+    }
+  }
+  .footer .container {
+    padding: 40px 20px 60px;
+  }
+}
+
+@media screen and (max-width: 464px) {
+  .header {
+    padding: 18px 0 2px;
+  }
+  .header__logo {
+    height: 32px;
+  }
+  .header__logo-imgs {
+    img {
+      height: 27px;
+      width: auto;
+    }
+  }
+  .header__logo-title {
+    font-size: 14.42px;
+    line-height: 15.57px;
+  }
+  .section-first__content {
+    padding-top: 90px;
+  }
+  .section-first .section__title {
+    font-size: 36px;
+  }
+  .section__text {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  .btn-primary {
+    padding: 11px 40px;
+  }
+  .ticker {
+    height: 38px;
+    font-size: 16px;
+    padding-top: 10px;
+  }
+  .section-support {
+    padding-top: 29px;
+  }
+  .section__title-img1 {
+    width: 335px;
+    height: 212.56px;
+  }
+  .section-support__content .first-title.section__title:last-of-type {
+    gap: 23px;
+  }
+  .section-support .section__title span:last-child {
+    margin-top: -6px;
+  }
+  .img-container2 .section__title-img2 {
+    width: 100vw;
+    height: auto;
+    top: 0px;
+    left: -21px;
+  }
+  .section-support__content .content-wrapper {
+    gap: 27px;
+  }
+  .table-container {
+    gap: 26px;
+  }
+  .text-note {
+    font-size: 18px;
+  }
+  .section-support {
+    padding-bottom: 123px;
+  }
+  .section-phases .section__title span:first-of-type {
+    gap: 12px;
+    align-items: start;
+    flex-direction: column;
+  }
+  .section-phases .section__title .section__title-text {
+    font-size: 18px;
+    max-width: 100%;
+  }
+  .title__container {
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 17px;
+  }
+  .carousel__buttons-container {
+    position: absolute;
+    right: 30%;
+    top: 522%;
+    gap: 5px;
   }
 }

@@ -34,90 +34,108 @@
           <div class="container">
             <div class="section-first__content">
               <h1 class="section__title">
-                <span> Превратите уездный город </span>
+                <span class="section__title-first">
+                  Превратите уездный город
+                </span>
                 <span> в столицу </span>
-                <span> земного шара </span>
+                <span class="section__title-last"> земного шара </span>
               </h1>
               <p class="section__text">
-                Оплатите взнос на телеграммы для организации Международного
-                васюкинского турнира по шахматам
+                Оплатите взнос на телеграммы для организации Международного
+                васюкинского турнира по шахматам
               </p>
-              <button class="btn-primary" autofocus>
-                Поддержать шахматную мысль
-              </button>
-              <button class="btn-primary">Подробнее о турнире</button>
+              <div class="section_buttons">
+                <a class="btn-primary" href="#support">
+                  Поддержать шахматную мысль
+                </a>
+                <a class="btn-primary" href="#phases">Подробнее о турнире</a>
+              </div>
             </div>
           </div>
         </div>
         <div class="ticker"></div>
       </section>
 
-      <section class="section section-support">
+      <section class="section section-support" id="support">
         <div class="container">
           <div class="section-support__content">
-            <h2 class="section__title">
-              Чтобы поддержать Международный васюкинский турнир посетите лекцию
-              на тему:
-              <span class="section__title-red">
-                «Плодотворная дебютная идея»
-              </span>
-            </h2>
-            <div class="img-container1">
-              <img
-                class="section__title-img1"
-                src="./assets/imgs/chess-players.png"
-                alt="chess players"
-              />
+            <div class="content-wrapper">
+              <div class="section__title first-title">
+                <span> Чтобы поддержать Международный васюкинский турнир </span>
+                <div class="img-container1">
+                  <img
+                    class="section__title-img1"
+                    src="./assets/imgs/chess-players.png"
+                    alt="chess players"
+                  />
+                </div>
+                <span>
+                  посетите лекцию на тему:
+                  <span class="section__title-red">
+                    «Плодотворная дебютная идея»
+                  </span>
+                </span>
+              </div>
             </div>
-            <div class="img-container2">
-              <img
-                class="section__title-img2"
-                src="./assets/imgs/chess-player.png"
-                alt="chess player"
-              />
-            </div>
-            <h2 class="section__title">
-              и Сеанс
-              <span class="section__title-red">
-                одновременной игры в шахматы на 160 досках
-              </span>
-              гроссмейстера О. Бендера
-            </h2>
-            <div class="prices-container">
-              <table class="prices-table">
-                <tr>
-                  <td>Место проведения:</td>
-                  <td>Клуб «Картонажник»</td>
-                </tr>
-                <tr>
-                  <td>Дата и время мероприятия:</td>
-                  <td>22 июня 1927 г. в 18:00</td>
-                </tr>
-                <tr>
-                  <td>Стоимость входных билетов:</td>
-                  <td>20 коп.</td>
-                </tr>
-                <tr>
-                  <td>Плата за игру:</td>
-                  <td>50 коп.</td>
-                </tr>
-                <tr>
-                  <td>Взнос на телеграммы:</td>
-                  <td>
-                    <span class="table__cell-crossed">100 руб.</span> 21 руб.
-                    16 коп.
-                  </td>
-                </tr>
-              </table>
-              <p class="text-note">
-                По всем вопросам обращаться в администрацию к К. Михельсону
-              </p>
+            <div class="content-wrapper">
+              <div class="img-container2">
+                <img
+                  class="section__title-img2"
+                  src="./assets/imgs/chess-player.png"
+                  alt="chess player"
+                />
+              </div>
+              <div class="table-container">
+                <h2 class="section__title">
+                  и Сеанс
+                  <span class="section__title-red">
+                    одновременной игры в шахматы на 160 досках
+                  </span>
+                  гроссмейстера О. Бендера
+                </h2>
+                <div class="prices-container">
+                  <table class="prices-table">
+                    <tr>
+                      <td>Место проведения:</td>
+                      <td>Клуб «Картонажник»</td>
+                    </tr>
+                    <tr>
+                      <td>Дата и время мероприятия:</td>
+                      <td>22 июня 1927 г. в 18:00</td>
+                    </tr>
+                    <tr>
+                      <td>Стоимость входных билетов:</td>
+                      <td>
+                        <span class="mobile">50 коп.</span>
+                        <span class="desktop">20 коп.</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Плата за игру:  
+                        <span class="mobile">20 коп.</span>
+                      </td>
+                      <td class="desktop">50 коп.</td>
+                    </tr>
+                    <tr>
+                      <td>Взнос на телеграммы:</td>
+                      <td>
+                        <span class="table__cell-crossed">100 руб.</span> 21
+                        руб. 16 коп.
+                      </td>
+                    </tr>
+                  </table>
+                  <p class="text-note">
+                    По всем вопросам обращаться в администрацию к К. Михельсону
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-phases">
+      <section class="section section-phases" id="phases">
         <div class="container">
           <h2 class="section__title">
             Этапы преображения
@@ -129,32 +147,32 @@
             </span>
           </h2>
           <div class="phases__container">
-            <div class="phases__item">
+            <div class="phases__item item1">
               <p>Строительство железнодорожной магистрали Москва-Васюки</p>
             </div>
-            <div class="phases__item">
+            <div class="phases__item item2">
               <p>
-                Открытие фешенебельной гостиницы «Проходная пешка» и других
+                Открытие фешенебельной гостиницы «Проходная пешка» и других
                 небоскрёбов
               </p>
             </div>
             <div class="phases__item item3">
               <p>
-                Поднятие сельского хозяйства в радиусе на тысячу километров:
+                Поднятие сельского хозяйства в радиусе на тысячу километров:
                 производство овощей, фруктов, икры, шоколадных конфет
               </p>
             </div>
-            <div class="phases__item">
+            <div class="phases__item item4">
               <p>Строительство дворца для турнира</p>
             </div>
-            <div class="phases__item">
+            <div class="phases__item item5">
               <p>
                 Размещение гаражей <br />
                 для гостевого<br />
                 автотранспорта
               </p>
             </div>
-            <div class="phases__item">
+            <div class="phases__item item6">
               <p>
                 Постройка сверхмощной радиостанции для передачи всему миру
                 сенсационных результатов
@@ -164,10 +182,54 @@
               <p>
                 Создание аэропорта «Большие Васюки»<br />с регулярным
                 отправлением почтовых<br />
-                самолётов и дирижаблей во все концы света, включая Лос-Анжелос
-                и Мельбурн
+                самолётов и дирижаблей во все концы света, включая Лос-Анжелос и
+                Мельбурн
               </p>
+              <div class="phases__plane"></div>
             </div>
+          </div>
+          <div class="phases__carousel-container">
+            <button class="carousel__button">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="18" cy="18" r="18" fill="#313131" />
+                <path
+                  d="M15.9232 11.0769L22.8463 18L15.9232 24.9231"
+                  stroke="white"
+                  stroke-width="1.63636"
+                  stroke-linecap="square"
+                />
+              </svg>
+            </button>
+            <div class="slide__buttons">
+              <button class="slide__button" autofocus></button>
+              <button class="slide__button"></button>
+              <button class="slide__button"></button>
+              <button class="slide__button"></button>
+              <button class="slide__button"></button>
+            </div>
+            <button class="carousel__button">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="18" cy="18" r="18" fill="#313131" />
+                <path
+                  d="M15.9232 11.0769L22.8463 18L15.9232 24.9231"
+                  stroke="white"
+                  stroke-width="1.63636"
+                  stroke-linecap="square"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -301,9 +363,9 @@
     <footer class="footer">
       <div class="container">
         <p class="footer__text">
-          Все персонажи, события и цитаты являются вымышленными и не принадлежат
-          создателям сайта. С подробностями можно познакомиться в главе XXXIV
-          романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+          Все персонажи, события и цитаты являются вымышленными и не принадлежат
+          создателям сайта. С подробностями можно познакомиться в главе XXXIV
+          романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
         </p>
       </div>
     </footer>
