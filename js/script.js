@@ -28,29 +28,54 @@ let containerLength = 0;
 let cardsNumberToMove = 1;
 let offset = 0;
 let gap = 0;
+const slideInterval = 4000;
+
+const moveRight = () => {
+  participantsButtons[0].disabled = false;
+  participantsContainer.style.right =
+    parseInt(participantsContainer.style.right) + offset + "px";
+  currentParticipant.innerHTML =
+    parseInt(currentParticipant.innerHTML) + cardsNumberToMove;
+  if (currentParticipant.innerHTML === "6") {
+    participantsButtons[1].disabled = true;
+  }
+};
+
+const moveLeft = () => {
+  participantsButtons[1].disabled = false;
+  participantsContainer.style.right =
+    parseInt(participantsContainer.style.right) - offset + "px";
+  currentParticipant.innerHTML =
+    parseInt(currentParticipant.innerHTML) - cardsNumberToMove;
+  if (currentParticipant.innerHTML === cardsNumberToMove.toString()) {
+    participantsButtons[0].disabled = true;
+  }
+};
 
 participantsButtons.forEach((el) => {
   el.addEventListener("click", () => {
     if (el.classList.contains("left")) {
-      participantsButtons[1].disabled = false;
-      participantsContainer.style.right =
-        parseInt(participantsContainer.style.right) - offset + "px";
-      currentParticipant.innerHTML =
-        parseInt(currentParticipant.innerHTML) - cardsNumberToMove;
-      if (currentParticipant.innerHTML === cardsNumberToMove.toString()) {
-        el.disabled = true;
-      }
+      moveLeft();
     } else {
-      participantsButtons[0].disabled = false;
-      participantsContainer.style.right =
-        parseInt(participantsContainer.style.right) + offset + "px";
-      currentParticipant.innerHTML =
-        parseInt(currentParticipant.innerHTML) + cardsNumberToMove;
-      if (currentParticipant.innerHTML === "6") {
-        el.disabled = true;
-      }
+      moveRight();
     }
   });
+});
+
+window.addEventListener("load", () => {
+  setInterval(() => {
+    if (
+      parseInt(currentParticipant.innerHTML) > 0 &&
+      parseInt(currentParticipant.innerHTML) < 6
+    ) {
+      moveRight();
+    } else {
+      participantsContainer.style.right = "0px";
+      currentParticipant.innerHTML = "1";
+      participantsButtons[0].disabled = true;
+      participantsButtons[1].disabled = false;
+    }
+  }, slideInterval);
 });
 
 const setParams = () => {
