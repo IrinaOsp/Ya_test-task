@@ -53,7 +53,9 @@
             </div>
           </div>
         </div>
-        <div class="ticker"></div>
+        <div class="ticker">
+          <p class="ticker__text"></p>
+        </div>
       </section>
 
       <section class="section section-support" id="support">
@@ -146,50 +148,53 @@
               </span>
             </span>
           </h2>
-          <div class="phases__container">
-            <div class="phases__item item1">
-              <p>Строительство железнодорожной магистрали Москва-Васюки</p>
-            </div>
-            <div class="phases__item item2">
-              <p>
-                Открытие фешенебельной гостиницы «Проходная пешка» и других
-                небоскрёбов
-              </p>
-            </div>
-            <div class="phases__item item3">
-              <p>
-                Поднятие сельского хозяйства в радиусе на тысячу километров:
-                производство овощей, фруктов, икры, шоколадных конфет
-              </p>
-            </div>
-            <div class="phases__item item4">
-              <p>Строительство дворца для турнира</p>
-            </div>
-            <div class="phases__item item5">
-              <p>
-                Размещение гаражей <br />
-                для гостевого<br />
-                автотранспорта
-              </p>
-            </div>
-            <div class="phases__item item6">
-              <p>
-                Постройка сверхмощной радиостанции для передачи всему миру
-                сенсационных результатов
-              </p>
-            </div>
-            <div class="phases__item item7">
-              <p>
-                Создание аэропорта «Большие Васюки»<br />с регулярным
-                отправлением почтовых<br />
-                самолётов и дирижаблей во все концы света, включая Лос-Анжелос и
-                Мельбурн
-              </p>
-              <div class="phases__plane"></div>
+          <div class="phases__container-wrapper">
+            <div class="phases__plane"></div>
+            <div class="phases__container" id="phases-slider">
+              <div class="phases__item item1">
+                <p>Строительство железнодорожной магистрали Москва-Васюки</p>
+              </div>
+              <div class="phases__item item2">
+                <p>
+                  Открытие фешенебельной гостиницы «Проходная пешка» и других
+                  небоскрёбов
+                </p>
+              </div>
+              <div class="phases__item item3">
+                <p>
+                  Поднятие сельского хозяйства в радиусе на тысячу километров:
+                  производство овощей, фруктов, икры, шоколадных конфет
+                </p>
+              </div>
+              <div class="phases__item item4">
+                <p>Строительство дворца для турнира</p>
+              </div>
+              <div class="phases__item item5">
+                <p>
+                  Размещение гаражей <br />
+                  для гостевого<br />
+                  автотранспорта
+                </p>
+              </div>
+              <div class="phases__item item6">
+                <p>
+                  Постройка сверхмощной радиостанции для передачи всему миру
+                  сенсационных результатов
+                </p>
+              </div>
+              <div class="phases__item item7">
+                <p>
+                  Создание аэропорта «Большие Васюки»<br />с регулярным
+                  отправлением почтовых<br />
+                  самолётов и дирижаблей во все концы света, включая Лос-Анжелос
+                  и Мельбурн
+                </p>
+                <div class="phases__plane"></div>
+              </div>
             </div>
           </div>
           <div class="phases__carousel-container">
-            <button class="carousel__button">
+            <button class="carousel__button left" disabled>
               <svg
                 width="36"
                 height="36"
@@ -207,13 +212,13 @@
               </svg>
             </button>
             <div class="slide__buttons">
-              <button class="slide__button" autofocus></button>
+              <button class="slide__button active"></button>
               <button class="slide__button"></button>
               <button class="slide__button"></button>
               <button class="slide__button"></button>
               <button class="slide__button"></button>
             </div>
-            <button class="carousel__button">
+            <button class="carousel__button right">
               <svg
                 width="36"
                 height="36"
@@ -239,7 +244,7 @@
           <div class="title__container">
             <h2 class="section__title">Участники турнира</h2>
             <div class="carousel__buttons-container">
-              <button class="carousel__button">
+              <button class="carousel__button left" disabled>
                 <svg
                   width="44"
                   height="44"
@@ -257,10 +262,10 @@
                 </svg>
               </button>
               <p class="carousel__counter">
-                <span class="carousel__counter-current">1</span> /
+                <span class="carousel__counter-current">3</span> /
                 <span class="carousel__counter-total">6</span>
               </p>
-              <button class="carousel__button">
+              <button class="carousel__button right">
                 <svg
                   width="44"
                   height="44"
@@ -281,7 +286,7 @@
           </div>
 
           <div class="participants__wrapper">
-            <div class="participants__container">
+            <div class="participants__container" id="participants">
               <div class="participants__item">
                 <div class="item__img-container">
                   <img
@@ -357,7 +362,9 @@
             </div>
           </div>
         </div>
-        <div class="ticker"></div>
+        <div class="ticker">
+          <p class="ticker__text">текст <span class="dot"></span>текст</p>
+        </div>
       </section>
     </main>
     <footer class="footer">
